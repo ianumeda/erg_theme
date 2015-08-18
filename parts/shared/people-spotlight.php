@@ -50,7 +50,7 @@ if($person_type==undefined) $person_type="";
       echo '<h5 class="topics section_heading">Focus</h5><ul class="topics">';
       foreach( $terms as $term ){
         echo '<li class="topic">';
-        echo '<a href="'. home_url('/?s='.$term->name ) .'" alt="Search the ERG website for this term">'. $term->name .'</a>';
+        echo '<a href="'. home_url('/erg-search/?search_for='.$term->name ) .'" alt="Search the ERG website for this term">'. $term->name .'</a>';
         // echo ($term->count > 1) ? ('<a href="'. get_term_link($term) .'">'. $term->name .'</a>') : $term->name;
         echo '</li>';
       }

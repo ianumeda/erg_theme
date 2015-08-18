@@ -20,10 +20,11 @@
           <?php
             the_content();
           ?>
-          <hr/>
-          <h3>Current Students</h3>
+          <div class="section_divider">
+            <h3 class="section_heading">Current Students</h3>
+          </div>
           <?php
-          $query = new WP_Query( array( 'post_type' => 'people','position'=>'student','posts_per_page' => '-1', 'order' => 'DESC', 'orderby' => 'modified', 'tag__in'=>array(80) ) );
+          $query = new WP_Query( array( 'post_type' => 'people','position'=>'student','posts_per_page' => '-1', 'order' => 'DESC', 'orderby' => 'date', 'tag__in'=>array(80) ) );
           // tag id 80 is "spotlight"
           if ( $query->have_posts() ) {
           	while ( $query->have_posts() ) {
@@ -34,9 +35,11 @@
           wp_reset_postdata();
         ?>  
         <hr/>
-        <h3>Alumni</h3>  
+          <div class="section_divider">
+            <h3 class="section_heading">Alumni</h3>
+          </div>
           <?php
-          $query = new WP_Query( array( 'post_type' => 'people','position'=>'alumni','posts_per_page' => '-1', 'order' => 'DESC', 'orderby' => 'modified', 'tag__in'=>array(80) ) );
+          $query = new WP_Query( array( 'post_type' => 'people','position'=>'alumni','posts_per_page' => '-1', 'order' => 'DESC', 'orderby' => 'date', 'tag__in'=>array(80) ) );
           // tag id 80 is "spotlight"
           if ( $query->have_posts() ) {
           	while ( $query->have_posts() ) {

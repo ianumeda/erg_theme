@@ -19,7 +19,7 @@
             the_content();
           ?>
           <?php
-          $query = new WP_Query( array( 'post_type' => 'people', 'position'=>'alumni', 'posts_per_page' => '1', 'order' => 'DESC', 'orderby' => 'modified', 'tag__in'=>array(80)));
+          $query = new WP_Query( array( 'post_type' => 'people', 'position'=>'alumni', 'posts_per_page' => '1', 'order' => 'DESC', 'orderby' => 'date', 'tag__in'=>array(80)));
           // tag id 80 is "spotlight"
           if ( $query->have_posts() ) {
           	while ( $query->have_posts() ) {
